@@ -2,58 +2,34 @@ using UnityEngine;
 
 public class CharacterControllerScript : MonoBehaviour
 {
-    public float speed;
-    public float rotationSpeed;
-    public float jumpSpeed;
-
-    private CharacterController characterController;
-    private float ySpeed;
-    private float originalStepOffset;
-    // Start is called before the first frame update
-    void Start()
-    {
-        characterController = GetComponent<CharacterController>();
-        originalStepOffset = characterController.stepOffset;
-    }
+    public CharacterController controller;
+    public Transform cam;
+    public float speed = 6f;
+    public float gravity = -9.81f;
+    public float turnSmoothTime = 0.1f;
+    public float  turnSmoothVelocity; 
+    Vector3 velocity;
+    
 
     // Update is called once per frame
     void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
-        Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
-        float magnitude = Mathf.Clamp01(movementDirection.magnitude) * speed;
-        movementDirection.Normalize();
-
-        ySpeed += Physics.gravity.y * Time.deltaTime;
-
-        if (characterController.isGrounded)
+        if (direction.magnitude >= 0.1f)
         {
-            characterController.stepOffset = originalStepOffset;
-            ySpeed = -0.5f;
 
-            if (Input.GetButtonDown("Jump"))
-            {
-                ySpeed = jumpSpeed;
-            }
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
+             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            controller.Move(moveDir.normalized * speed * Time.deltaTime);
+            velocity.y += gravity * Time.deltaTime;
+            controller.Move(velocity * Time.deltaTime);
         }
-        else
-        {
-            characterController.stepOffset = 0;
-        }
-
-        Vector3 velocity = movementDirection * magnitude;
-
-        velocity.y = ySpeed;
-
-        characterController.Move(movementDirection * magnitude);
-        
-        if (movementDirection != Vector3.zero)
-        {
-            Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
-        }
-
     }
 }
+ 
