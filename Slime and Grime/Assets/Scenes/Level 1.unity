@@ -1107,19 +1107,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1486679412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1486679405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b588f06055931eb4ba340b093c149b8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 6
 --- !u!114 &1486679413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1228,8 +1215,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.3286228
-  m_Center: {x: 0.026729345, y: 2.3102646, z: -0.58730125}
+  m_Radius: 1.8847322
+  m_Center: {x: 0.026729345, y: 1.866374, z: -0.58730125}
 --- !u!114 &1486679421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1242,6 +1229,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56d6b0cca60144a41bdfe8a6144c0a48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1486679422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486679405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8e5d116620e8b45a61ab8fe7d48a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1295175104}
+  speed: 6
+  gravity: -9.81
+  turnSmoothTime: 0.1
+  turnSmoothVelocity: 0
 --- !u!1001 &1980063478
 PrefabInstance:
   m_ObjectHideFlags: 0
