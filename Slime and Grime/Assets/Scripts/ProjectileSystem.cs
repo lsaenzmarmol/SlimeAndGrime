@@ -6,7 +6,7 @@ public class ProjectileSystem : MonoBehaviour
     public int ammoCount = 5;
     public GameObject projectilePrefab;
     public Transform projectileSpawnPoint;
-    public Image ammoBarImage;
+    //public Image ammoBarImage;
 
     void Start()
     {
@@ -30,6 +30,6 @@ public class ProjectileSystem : MonoBehaviour
 
     void UpdateAmmoBar()
     {
-        ammoBarImage.fillAmount = (float)ammoCount / 5f; // 5 is the maximum ammo count
+       // ammoBarImage.fillAmount = (float)ammoCount / 5f; // 5 is the maximum ammo count
     }
 }

@@ -8,7 +8,7 @@ public class NewPlayerMovement : MonoBehaviour
 
     public Transform cam;
     public float speed = 6f;
-    public float gravity = -9.81f;
+    //public float gravity = -9.81f;
     public float turnSmoothTime = 0.1f;
     public float  turnSmoothVelocity; 
     Vector3 velocity;
