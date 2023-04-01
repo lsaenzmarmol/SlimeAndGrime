@@ -11,7 +11,7 @@ public class NewPlayerMovement : MonoBehaviour
     //public float gravity = -9.81f;
     public float turnSmoothTime = 0.1f;
     public float  turnSmoothVelocity; 
-    Vector3 velocity;
+    //Vector3 velocity;
     private float forwardInput;
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,7 @@ public class NewPlayerMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         forwardInput = Input.GetAxisRaw("Vertical");
-        Vector3 direction = new Vector3(horizontalInput, 0f, forwardInput).normalized;
+        Vector3 direction = new Vector3(horizontalInput, 0f, forwardInput);
 
         transform.Translate(Vector3.forward* Time.deltaTime * speed * forwardInput);
         transform.Translate(Vector3.right* Time.deltaTime * speed * horizontalInput);
