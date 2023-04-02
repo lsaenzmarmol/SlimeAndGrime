@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System;
 
 public class AudioManager : MonoBehaviour
@@ -37,6 +38,7 @@ public class AudioManager : MonoBehaviour
         else
         {
             musicSource.clip = s.clip;
+            musicSource.loop = true;
             musicSource.Play();
         }
     }
@@ -58,5 +60,23 @@ public class AudioManager : MonoBehaviour
     public void StopMusic()
     {
         musicSource.Stop();
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.buildIndex == 0)
+        {
+            PlayMusic("Menu Music");
+        }
     }
 }

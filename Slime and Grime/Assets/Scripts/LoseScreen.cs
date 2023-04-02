@@ -8,7 +8,7 @@ public class LoseScreen : MonoBehaviour
    public void RestartGame()
    {
       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-      AudioManager.Instance.PlayMusic("Menu Music");
+      AudioManager.Instance.PlayMusic("Level 1 Music");
    }
 
    public void QuitGame()

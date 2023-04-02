@@ -7,7 +7,7 @@ public class MainMenuScript : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        AudioManager.Instance.PlayMusic("Menu Music");
+        AudioManager.Instance.PlayMusic("Level 1 Music");
     }
 
     public void QuiteGame()

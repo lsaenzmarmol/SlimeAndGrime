@@ -39,7 +39,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
-        AudioManager.Instance.PlayMusic("Menu Music");
+        AudioManager.Instance.PlayMusic("Level 1 Music");
     }
     public void GoToMainMenu()
     {
