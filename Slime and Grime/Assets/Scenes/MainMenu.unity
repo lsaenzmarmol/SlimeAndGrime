@@ -825,7 +825,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Options
+  m_text: "HOW TO \nPLAY"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1107,6 +1107,22 @@ PrefabInstance:
     - target: {fileID: 1624088567016090150, guid: cafa2e9c948ee014f9a4bc200d53f30b, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -326.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3618109012865734623, guid: cafa2e9c948ee014f9a4bc200d53f30b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 263.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 3725752924293030289, guid: cafa2e9c948ee014f9a4bc200d53f30b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 338.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3725752924293030289, guid: cafa2e9c948ee014f9a4bc200d53f30b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -76.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908475360830931274, guid: cafa2e9c948ee014f9a4bc200d53f30b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8197579156038949329, guid: cafa2e9c948ee014f9a4bc200d53f30b, type: 3}
       propertyPath: m_Pivot.x
