@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PhaseAbility : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class PhaseAbility : MonoBehaviour
     private Rigidbody myRb;
     private bool isCooldown;
     private bool isPhasing;
+    public TextMeshProUGUI cooldownText;
+    float startTime;
 
     private void Start()
     {
@@ -25,14 +28,27 @@ public class PhaseAbility : MonoBehaviour
             {
                 DisableCollider();
                 isPhasing = true;
+                startTime = Time.time;
                 StartCoroutine(StartCooldown());
             }
         }
-
         if (isPhasing)
         {
             StartCoroutine(StopPhasing());
         }
+
+        if (isCooldown)
+        {
+            float remainingTime = Mathf.CeilToInt(10 - (Time.time - startTime));
+            cooldownText.text = "Cooldown: " + remainingTime.ToString();
+        }
+        else
+        {
+            cooldownText.text = "";
+        }
+        
+
+        
     }
 
     public void DisableCollider()
@@ -52,6 +68,7 @@ public class PhaseAbility : MonoBehaviour
         isCooldown = true;
         yield return new WaitForSeconds(10);
         isCooldown = false;
+        cooldownText.text = "";
     }
 
     IEnumerator StopPhasing()
