@@ -27,6 +27,7 @@ public class NewJumpScript : MonoBehaviour
                 Jump();
                 isGrounded=false;
             }
+            AudioManager.Instance.PlaySFX("Slime Jump");
         }
 
         else if(!isGrounded && jumpAllowed > 0)
@@ -55,5 +56,6 @@ public class NewJumpScript : MonoBehaviour
     private void Jump()
     {
         rig.AddForce(transform.up * jumpSpeed, ForceMode.VelocityChange);
+        AudioManager.Instance.PlaySFX("Slime Jump");
     }
 }

@@ -20,6 +20,7 @@ public class GummiDeath : MonoBehaviour
         if(collision.gameObject.CompareTag("Enemy"))
         {
             gameObject.SetActive(false);
+            AudioManager.Instance.PlaySFX("Player Hurt SFX");
         }
     }
 }

@@ -12,6 +12,8 @@ public class TeleportAbility : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             TeleportForward();
+
+            AudioManager.Instance.PlaySFX("Slime Teleport");
         }
     }
 

@@ -71,7 +71,7 @@ public class CharacterAnim : MonoBehaviour
 
 
 
-        if (Input.GetKey("space"))
+        if (Input.GetKeyDown("space"))
         {
             anim.SetBool("isJumping", true);
         }

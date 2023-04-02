@@ -21,6 +21,7 @@ public class EnemyCollider : MonoBehaviour
         if(collision.gameObject.CompareTag("Bullets"))
         {
             Destroy(gameObject);
+            AudioManager.Instance.PlaySFX("Enemy Hurt SFX");
         }
     }
 }
