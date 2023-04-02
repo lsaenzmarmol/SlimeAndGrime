@@ -10,6 +10,8 @@ public class NewPlayerMovement : MonoBehaviour
     private float turnSmoothVelocity;
     public float speed = 6f;
     public float turnSmoothTime = 0.1f;
+    private bool hasSpeedBoost = false;
+    public float speedBoostAmount = 15f;
 
     void Start()
     {
@@ -18,11 +20,20 @@ public class NewPlayerMovement : MonoBehaviour
         cam = Camera.main.transform;
     }
 
-    void FixedUpdate()
+   void FixedUpdate()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         forwardInput = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontalInput, 0f, forwardInput).normalized;
+
+        if (hasSpeedBoost && Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = speedBoostAmount;
+        }
+        else
+        {
+            speed = 6f;
+        }
 
         if (direction.magnitude >= 0.1f)
         {
@@ -33,5 +44,10 @@ public class NewPlayerMovement : MonoBehaviour
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             transform.position += moveDir * speed * Time.fixedDeltaTime;
         }
+    }
+
+    public void AddSpeedBoost(float speedBoostAmount)
+    {
+        hasSpeedBoost = true;
     }
 }
