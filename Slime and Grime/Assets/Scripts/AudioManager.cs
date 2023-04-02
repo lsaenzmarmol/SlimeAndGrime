@@ -6,7 +6,6 @@ using System;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
-
     public Sounds[] musicSounds, sfxSounds;
     public AudioSource musicSource, sfxSource;
 
@@ -40,7 +39,6 @@ public class AudioManager : MonoBehaviour
             musicSource.clip = s.clip;
             musicSource.Play();
         }
-
     }
 
     public void PlaySFX(string name)
@@ -55,11 +53,7 @@ public class AudioManager : MonoBehaviour
         {
             sfxSource.PlayOneShot(s.clip);
         }
-
-    
-
     }
-
 
     public void StopMusic()
     {

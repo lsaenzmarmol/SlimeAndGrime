@@ -5,10 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GummiDeath : MonoBehaviour
 {
-
     public GameObject loseScreen;
-    // Start is called before the first frame update
-   
+    
     void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.CompareTag("Enemy"))
