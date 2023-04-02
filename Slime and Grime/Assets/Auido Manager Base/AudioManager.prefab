@@ -44,9 +44,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -176,12 +176,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSounds:
   - name: Level 1 Music
-    clip: {fileID: 8300000, guid: fc7d336b7c74d7d4b8df8eb369cae725, type: 3}
+    clip: {fileID: 8300000, guid: a550d6dbe464ca44599aa83eff0b14a7, type: 3}
   - name: Level 2 Music
     clip: {fileID: 8300000, guid: 87f2f5f746edec343a906f6370be9559, type: 3}
   - name: Level 3 Music
     clip: {fileID: 8300000, guid: 07a62f2c9e1733e499fa814cdd1f4f0e, type: 3}
   - name: Menu Music
+    clip: {fileID: 8300000, guid: 50742d278f4ebf347a6c35489aaa6ceb, type: 3}
+  - name: Win Music
     clip: {fileID: 8300000, guid: 50742d278f4ebf347a6c35489aaa6ceb, type: 3}
   sfxSounds:
   - name: Slime Walk
@@ -204,6 +206,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 56ea59f46728d3744a1b975ba08f6ca2, type: 3}
   - name: Player Hurt SFX
     clip: {fileID: 8300000, guid: a3726d91b25497043adfad6747ca9ddd, type: 3}
+  - name: Player Death SFX
+    clip: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
   musicSource: {fileID: 6488944787015470090}
   sfxSource: {fileID: 2442641470577954015}
 --- !u!1 &8827074996398595748
