@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GummiDeath : MonoBehaviour
 {
@@ -14,6 +13,7 @@ public class GummiDeath : MonoBehaviour
             gameObject.SetActive(false);
             ShowLoseScreen();
             AudioManager.Instance.StopMusic();
+            AudioManager.Instance.PlaySFX("Player Death SFX");
         }
     }
 
