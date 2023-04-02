@@ -52,11 +52,23 @@ public class ProjectileGunTutorial : MonoBehaviour
 
     private void Update()
     {
+        if(!PauseMenu.isPaused)
+        {
+            readyToShoot = true;
+        }
+
+        else
+        {
+            readyToShoot = false;
+        }
+
         MyInput();
 
         //Set ammo display, if it exists :D
         if (ammunitionDisplay != null)
             ammunitionDisplay.SetText(bulletsLeft / bulletsPerTap + " / " + magazineSize / bulletsPerTap);
+        
+
     }
     private void MyInput()
     {
@@ -72,6 +84,8 @@ public class ProjectileGunTutorial : MonoBehaviour
         //Shooting
         if (readyToShoot && shooting && !reloading && bulletsLeft > 0)
         {
+            AudioManager.Instance.PlaySFX("Slime Projectile");
+
             //Set bullets shot to 0
             bulletsShot = 0;
 
