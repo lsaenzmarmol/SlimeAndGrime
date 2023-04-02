@@ -11,6 +11,7 @@ public class WinObject : MonoBehaviour
         {
            ShowWinScreen();
            AudioManager.Instance.StopMusic();
+           AudioManager.Instance.PlaySFX("Menu Select");
         }
     }
 

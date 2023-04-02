@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 122878546470702553}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -3.7785902, y: 0.069999695, z: 7.8516636}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3977, y: 1.3977, z: 1.3977}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2143545042676394604}
@@ -91,7 +91,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5db023d3cf523f41836a3ed60254de0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movePositionTransform: {fileID: 0}
+  movePositionTransforms:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  playerTransform: {fileID: 0}
+  detectionRange: 15
 --- !u!195 &6066262597555530521
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -102,13 +108,13 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 8
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
