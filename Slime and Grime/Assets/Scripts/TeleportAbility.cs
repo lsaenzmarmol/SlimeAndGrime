@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class TeleportAbility : MonoBehaviour
 {
-    // Update is called once per frame
-    public float teleportDistance = 2.0f;
+    public float teleportDistance = 10f;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetButtonDown("Fire1"))
         {
             TeleportForward();
 
