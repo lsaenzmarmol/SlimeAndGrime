@@ -4744,7 +4744,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 560668998}
-  m_LocalRotation: {x: -0.0032483626, y: 0.98564255, z: -0.1677315, w: -0.01908839}
+  m_LocalRotation: {x: -0.003248356, y: 0.98564255, z: -0.1677315, w: -0.01908835}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10791,7 +10791,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1295175101}
-  m_LocalRotation: {x: -0.0032483663, y: 0.98564255, z: -0.16773154, w: -0.019088412}
+  m_LocalRotation: {x: -0.0032483533, y: 0.98564255, z: -0.16773154, w: -0.019088335}
   m_LocalPosition: {x: -86.90307, y: 114.74, z: -26.663496}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -19024,6 +19024,10 @@ PrefabInstance:
       propertyPath: ammunitionDisplay
       value: 
       objectReference: {fileID: 613059056}
+    - target: {fileID: 98446722834662748, guid: 2574d76471a20334c9fa509dde48b457, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 98446722834662760, guid: 2574d76471a20334c9fa509dde48b457, type: 3}
       propertyPath: loseScreen
       value: 

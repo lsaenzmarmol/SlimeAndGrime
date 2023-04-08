@@ -16,26 +16,41 @@ public class CarMover : MonoBehaviour
 
     // Total distance between the markers.
     private float journeyLength;
+    public LayerMask mask;
 
     void Start()
     {
+       
         // Keep a note of the time the movement started.
-        startTime = Time.time;
+        //startTime = Time.time;
 
         // Calculate the journey length.
-        journeyLength = Vector3.Distance(startMarker.position, endMarker.position);
+        //journeyLength = Vector3.Distance(startMarker.position, endMarker.position);
     }
 
     // Follows the target position like with a spring
     void Update()
     {
+        GetComponent<Rigidbody>().velocity = -transform.forward * 10f;
         // Distance moved = time * speed.
-        float distCovered = (Time.time - startTime) * speed;
+        //float distCovered = (Time.time - startTime) * speed;
 
         // Fraction of journey completed = current distance divided by total distance.
-        float fracJourney = distCovered / journeyLength;
+        //float fracJourney = distCovered / journeyLength;
 
         // Set our position as a fraction of the distance between the markers and pingpong the movement.
-        transform.position = Vector3.Lerp(startMarker.position, endMarker.position, Mathf.PingPong(fracJourney, 1));
+        //transform.position = Vector3.Lerp(startMarker.position, endMarker.position, Mathf.PingPong(fracJourney, 1));
+    }
+
+    private void OnCollisionEnter (Collision Collision)
+    {
+        if((mask.value& (1<<Collision.transform.gameObject.layer))>0)
+        {
+            Debug.Log("worked");
+            GetComponent <Rigidbody>().AddForce((transform.up + Collision.transform.forward)* 10, ForceMode.Impulse);
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            Destroy(this);
+        }
+            
     }
 }
