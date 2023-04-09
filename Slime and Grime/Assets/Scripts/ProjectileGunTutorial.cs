@@ -4,6 +4,7 @@ using TMPro;
 
 public class ProjectileGunTutorial : MonoBehaviour
 {
+   
     public GameObject bullet;
 
     public float shootForce, upwardForce;
@@ -26,6 +27,9 @@ public class ProjectileGunTutorial : MonoBehaviour
     public TextMeshProUGUI ammunitionDisplay;
 
     public bool allowInvoke = true;
+
+ 
+
 
     private void Awake()
     {

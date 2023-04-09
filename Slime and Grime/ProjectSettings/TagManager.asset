@@ -7,6 +7,8 @@ TagManager:
   - Bullets
   - Enemy
   - Ground
+  - Overgrow
+  - Super Small
   layers:
   - Default
   - TransparentFX

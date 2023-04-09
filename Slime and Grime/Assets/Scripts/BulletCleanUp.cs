@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BulletCleanUp : MonoBehaviour
 {
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,4 +25,8 @@ public class BulletCleanUp : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+
+
+
 }
