@@ -11,6 +11,7 @@ public class PhaseAbility : MonoBehaviour
     private bool isPhasing;
     public TextMeshProUGUI cooldownText;
     float startTime;
+    public int PhasingTime = 5;
 
     private void Start()
     {
@@ -39,7 +40,7 @@ public class PhaseAbility : MonoBehaviour
 
         if (isCooldown)
         {
-            float remainingTime = Mathf.CeilToInt(10 - (Time.time - startTime));
+            float remainingTime = Mathf.CeilToInt(15 - (Time.time - startTime));
             cooldownText.text = "Cooldown: " + remainingTime.ToString();
         }
         else
@@ -73,7 +74,7 @@ public class PhaseAbility : MonoBehaviour
 
     IEnumerator StopPhasing()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(PhasingTime);
         isPhasing = false;
         EnableCollider();
     }
