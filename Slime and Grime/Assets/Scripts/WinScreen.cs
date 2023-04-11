@@ -19,7 +19,7 @@ public class WinScreen : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1f; // Resume the scene
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("HubWorld");
     }
 
     public void QuitGame()
