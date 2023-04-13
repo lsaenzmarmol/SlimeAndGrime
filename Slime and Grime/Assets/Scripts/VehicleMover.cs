@@ -5,8 +5,8 @@ using UnityEngine;
 public class VehicleMover : MonoBehaviour
 {
     public LayerMask mask;
-    public int carDespawn = 5;
-    public int carSpeed = 10;
+    public int carDespawn = 10;
+    public int carSpeed = 20;
 
     void Start()
     {
