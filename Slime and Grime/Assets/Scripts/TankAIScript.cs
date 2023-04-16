@@ -5,6 +5,7 @@ using UnityEngine.AI;
 public class TankAIScript : MonoBehaviour
 {
     public Transform player;
+    public Transform firingPoint; // The transform from where the projectile will be fired
     public float shootingRange = 20f;
     public float shootingInterval = 5f;
     public float collisionRange = 5f;
@@ -43,14 +44,19 @@ public class TankAIScript : MonoBehaviour
 
     void Shoot()
     {
-        // Instantiate a new instance of the projectile prefab
-        GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+        Debug.Log("Shooting at Player");
+        // Instantiate a new instance of the projectile prefab at the firing point's position
+        GameObject projectile = Instantiate(projectilePrefab, firingPoint.position, Quaternion.identity);
 
-        // Calculate the direction towards the player
-        Vector3 direction = (player.position - transform.position).normalized;
+        // Calculate the direction towards the player from the firing point's position
+        Vector3 direction = player.position - firingPoint.position;
 
-        // Set the velocity of the projectile towards the player
-        projectile.GetComponent<Rigidbody>().velocity = direction * projectileSpeed;
+        // Set the initial position of the projectile
+        projectile.transform.position = firingPoint.position;
+
+        // Apply a forward force to the projectile using AddForce()
+        Rigidbody projectileRigidbody = projectile.GetComponent<Rigidbody>();
+        projectileRigidbody.AddForce(direction.normalized * projectileSpeed, ForceMode.VelocityChange);
     }
 
     void TryCollide()
