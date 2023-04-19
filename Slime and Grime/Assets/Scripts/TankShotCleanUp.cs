@@ -16,4 +16,12 @@ public class TankShotCleanUp : MonoBehaviour
     {
        Destroy(this.gameObject, DespawnTime); 
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }

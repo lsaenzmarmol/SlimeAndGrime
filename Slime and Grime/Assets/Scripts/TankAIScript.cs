@@ -30,23 +30,24 @@ public class TankAIScript : MonoBehaviour
             Shoot();
             nextShootTime = Time.time + shootingInterval;
         }
-        else if (distanceToPlayer <= collisionRange)
-        {
-            // Try to collide with player
-            TryCollide();
-        }
         else
         {
             // Move towards the player using NavMeshAgent
             agent.SetDestination(player.position);
         }
     }
-
     void Shoot()
     {
         Debug.Log("Shooting at Player");
+        
         // Instantiate a new instance of the projectile prefab at the firing point's position
         GameObject projectile = Instantiate(projectilePrefab, firingPoint.position, Quaternion.identity);
+
+        // Get the rotation of the tank
+        Quaternion tankRotation = transform.rotation;
+
+        // Rotate the projectile by the same rotation as the tank
+        projectile.transform.rotation = Quaternion.Euler(90f, tankRotation.eulerAngles.y, 0f);
 
         // Calculate the direction towards the player from the firing point's position
         Vector3 direction = player.position - firingPoint.position;
@@ -57,12 +58,6 @@ public class TankAIScript : MonoBehaviour
         // Apply a forward force to the projectile using AddForce()
         Rigidbody projectileRigidbody = projectile.GetComponent<Rigidbody>();
         projectileRigidbody.AddForce(direction.normalized * projectileSpeed, ForceMode.VelocityChange);
-    }
-
-    void TryCollide()
-    {
-        // Code to try to collide with player
-        Debug.Log("Trying to collide with player!");
     }
 }
 
